@@ -25,17 +25,22 @@ while (isSunk == false){ /* Pętla działa dopóki zmienna isSunk nie ma wartoś
         }
             if (guess == location1 || guess == location2 || guess == location3){ /* Operator logiczny LUB sprawdza czy któraś z wartości zmiennych, w których zapisana jest pozycja statku została trafiona przez użytkownika */
                 hits = hits + 1; /* Jeśli warunek został spełniony, dodaje jeden do wartości  */
-                
-            } 
-                if (guess == location1 || guess == location2 || guess == location3 && hits !== 3) {
+                alert("TRAFIONY!");
+             
+                    if (hits == 3){ /* Warunek spełniony jeśli wartość zmiennej hits równa się 3  */
+                    isSunk = true; /* Zmienna isSunk zmienia wartość na true */ 
+                    alert("Zatopiłeś okręt!");
+                    } 
+                          if ((guess == location1 || guess == location2 || guess == location3) && hits !== 3) {
                 /* Instrukcja warunkowa zadzaiała jeśli zostanie trafiona któraś z lokacji okrętu ORAZ zmienna hits będzie mniejsza, bądź równa wartości 2 */
                 
                     alert("Okręt został trafiony. Pozostał(y) " + (3 - hits) + " strzały do zatopienia okrętu");
                 }
-                    if (hits == 3){ /* Warunek spełniony jeśli wartość zmiennej hits równa się 3  */
-                    isSunk = true; /* Zmienna isSunk zmienia wartość na true */ 
-                    alert("Zatopiłeś okręt!");
-                    } /* Pętla się kończy. */
+            } 
+            if ((guess > 0 && guess < 7) && guess != location1 && guess != location2 && guess != location3){
+                /* Operator logiczny sprawdza czy zienna guess jest większa 0 i równocześnie mniejsza 6 a następnie upewnia się, że zmienna guess nie posiada wartości ze zmiennych z położeniem statku. Zabezpiecza przed wyświetlaniem powiadomienia "PUDŁO" w przyadku podawania liczb z poza zakresu. */
+                 alert("PUDŁO"); 
+            }
     
 }
     
