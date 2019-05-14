@@ -27,7 +27,7 @@ while (isSunk == false){ /* Pętla działa dopóki zmienna isSunk nie ma wartoś
                 hits = hits + 1; /* Jeśli warunek został spełniony, dodaje jeden do wartości  */
                 
             } 
-                if (guess == location1 || guess == location2 || guess == location3 && hits <= 2) {
+                if (guess == location1 || guess == location2 || guess == location3 && hits !== 3) {
                 /* Instrukcja warunkowa zadzaiała jeśli zostanie trafiona któraś z lokacji okrętu ORAZ zmienna hits będzie mniejsza, bądź równa wartości 2 */
                 
                     alert("Okręt został trafiony. Pozostał(y) " + (3 - hits) + " strzały do zatopienia okrętu");
